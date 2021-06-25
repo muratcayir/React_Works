@@ -1,25 +1,39 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import Card from './components/Card';
+import Collapse from './components/Collapse';
 
-
-import Card from './components/Card'
-
-
-
-const App =()=>{
-
-return(
-<div>
+const App = () => {
+  return (
+    <div>
       <div className="card-group">
+        
+          <Card
+          cardTitle="first card"
+          cardText="lorem ipsum "
+          cardUpdated=" 5 minutes ago"
+          image="https://picsum.photos/id/1/200/300"
+        />
+       
 
-         <Card  cardTitle="first card"   />
+          <Collapse href="collapseExample2">
+          <Card
+          cardTitle="second card"
+          cardText="lorem ipsum "
+          cardUpdated=" 5 minutes ago"
+          image="https://picsum.photos/id/1000/200/300"
+        />
+          </Collapse>
 
-         <Card  cardTitle="second card"/> 
+          <Collapse href="collapseExample3">
+         No card
+          </Collapse>
+      
 
-         <Card  cardTitle="third card"/> 
-         
+       
+        
       </div>
-</div>
-)
-}
-ReactDom.render(<App/>,document.getElementById('root'));
+    </div>
+  );
+};
+ReactDOM.render(<App />, document.getElementById('root'));
