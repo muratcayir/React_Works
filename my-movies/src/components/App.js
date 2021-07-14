@@ -42,8 +42,8 @@ class App extends React.Component{
               "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/4hne3v6jN4MlCnhSkxOW7YspJhr.jpg",
               "overview": "When a mafia accountant is taken hostage on his beat, a police officer – wracked by guilt from a prior stint as a negotiator – must negotiate the standoff, even as his own family is held captive by the mob.",
               "id": 13
-            }]
-
+            }],
+         searchQuery:""
     }
 
 
@@ -61,17 +61,27 @@ class App extends React.Component{
   }))
  }
 
+ searchMovie = (event) =>{
+  console.log(event.target.value)
+  this.setState({searchQuery:event.target.value})
+}
 
     render(){
+
+    let  filteredMovies = this.state.movies.filter(
+        (movie) =>{
+return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !==-1
+        }
+      )
         return (
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <SearchBar/>
+                  <SearchBar  searchMovieProp ={this.searchMovie } />
                
                 </div>
                 <MovieList
-                movies={this.state.movies}
+                movies={filteredMovies}
                 deleteMovieProp={this.deleteMovie}
                 />
               </div>
