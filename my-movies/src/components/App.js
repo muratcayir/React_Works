@@ -3,6 +3,7 @@ import React from 'react';
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
+import EditMovie from './EditMovie';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -88,15 +89,12 @@ class App extends React.Component {
                             <AddMovie 
 
                             onAddMovie = {(movie) => {this.addMovie(movie)
-                                history.push("/")
-                            }
-                        }
-                            
-                            />
-
-                        )}>
+                                history.push("/") }
+                        } />)}>
 
                         </Route>
+                        
+                        <Route path="/edit/:id" component ={EditMovie}/>
 
 
                         

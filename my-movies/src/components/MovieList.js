@@ -1,12 +1,13 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const MovieList = (props) => {
 
+const truncateOwerview = (string, maxLength) => {
+    if(!string) return null;
+    if(string.length <= maxLength) return string;
+    return `${string.substring(0,maxLength)}...`  
+}
 
-/*         function handleClick(event) {
-            //console.log("Button Clicked");
-            console.log(event.pageY)
-        } */
 
         return (
             <div className="row">
@@ -18,9 +19,19 @@ const MovieList = (props) => {
                             <img src={movie.imageURL} className="card-img-top" alt="Sample Movie" />
                             <div className="card-body">
                                 <h5 className="card-title">{movie.name}</h5>
-                                <p className="card-text">{movie.overview}</p>
+                                <p className="card-text">{truncateOwerview(movie.overview,150)}</p>
                                 <div className="d-flex justify-content-between align-items-center">
                                     <button type="button" onClick={(event) => props.deleteMovieProp(movie)} className="btn btn-md btn-outline-danger">Delete</button>
+
+
+
+                                <Link type="button"
+                                className="btn btn-md btn-outline-primary"
+                                to ={`edit/${movie.id}`}
+                                >Edit</Link>
+
+
+
                                     <h2><span className="badge badge-info">{movie.rating}</span></h2>
                                 </div>
                             </div>
