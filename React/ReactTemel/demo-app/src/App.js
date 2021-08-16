@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink
 } from "react-router-dom";
 
 import Home from "./components/Home"
@@ -20,16 +20,16 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink exact activeClassName="active" to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink exact activeClassName="active" to="/about">About</NavLink>
           </li>
           <li>
-            <Link to="/users">Users</Link>
+            <NavLink exact activeClassName="active" to="/users">Users</NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink exact activeClassName="active" to="/contact">Contact</NavLink>
           </li>
         </ul>
       </nav>

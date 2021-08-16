@@ -1,4 +1,4 @@
-import {useParams,Link} from "react-router-dom";
+import {useParams,NavLink} from "react-router-dom";
 import {useEffect,useState} from "react"
 import axios from 'axios'
 
@@ -20,7 +20,10 @@ useEffect(() => {
         <h3>ID: {id}</h3>
         {load&&<div>Loading...</div>}
         {!load && <code>{JSON.stringify(user)}</code>}
-        <Link to={`/users/${parseInt(id)+1}`}>Next User({parseInt(id)+1})</Link>
+        <NavLink 
+        to={`/users/${parseInt(id)+1}`}>Next User({parseInt(id)+1})
+        
+        </NavLink>
       </div>
     );
   }
