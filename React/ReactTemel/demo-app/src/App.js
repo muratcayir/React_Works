@@ -11,6 +11,7 @@ import Home from "./components/Home"
 import About from "./components/About"
 import Users from "./components/Users"
 import Contact from "./components/Contact"
+import Error404 from "./components/Error404"
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route  path="/about"><About /> </Route>
         <Route path="/users"><Users/> </Route>
         <Route path="/contact"><Contact/></Route>
+        <Route path="*"><Error404/></Route>
      
      
       </Switch>
