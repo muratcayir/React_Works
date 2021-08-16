@@ -9,7 +9,6 @@ import {
 
 import Home from "./components/Home"
 import About from "./components/About"
-import User from "./components/User"
 import Users from "./components/Users"
 import Contact from "./components/Contact"
 
@@ -42,7 +41,7 @@ function App() {
         <Route  path="/about"><About /> </Route>
         <Route path="/users"><Users/> </Route>
         <Route path="/contact"><Contact/></Route>
-        <Route path= "/user/:id"><User/></Route>
+     
      
       </Switch>
     </div>

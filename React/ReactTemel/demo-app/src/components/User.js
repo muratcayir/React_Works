@@ -3,6 +3,7 @@ import {useEffect,useState} from "react"
 import axios from 'axios'
 
 
+
 function User() {
    const [user,setUser] = useState({})
    const [load,setLoad] = useState(true)
@@ -19,7 +20,7 @@ useEffect(() => {
         <h3>ID: {id}</h3>
         {load&&<div>Loading...</div>}
         {!load && <code>{JSON.stringify(user)}</code>}
-        <Link to={`/user/${parseInt(id)+1}`}>Next User({parseInt(id)+1})</Link>
+        <Link to={`/users/${parseInt(id)+1}`}>Next User({parseInt(id)+1})</Link>
       </div>
     );
   }
