@@ -1,8 +1,10 @@
 {
-  "name": "lifecycle",
+  "name": "giphy_api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@giphy/js-fetch-api": "^4.1.1",
+    "@giphy/react-components": "^5.1.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",

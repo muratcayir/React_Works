@@ -1,16 +1,14 @@
+import React from 'react'
 import {useState}from 'react';
 
-
-function App() {
-
-const [name ,setName] = useState("murat")
+function State() {
+    const [name ,setName] = useState("murat")
 const [age,setAge]= useState(25)
 const [friends,setFriends]=useState(["murat","taha"])
 const [adress,setAdress] =useState({title:"elazig",zip:23000})
-
-  return (
-    <div className="App">
-     <h1>selam {name}</h1>
+    return (
+        <div>
+                 <h1>selam {name}</h1>
      <h3>{age}</h3>
      <button onClick={()=>setName("kazım")}> Değiştir isim</button>
      <button onClick={()=>setAge(24)}>DEğiştir yas</button>
@@ -22,8 +20,8 @@ const [adress,setAdress] =useState({title:"elazig",zip:23000})
      <h3>Adress</h3>
      <h3>{adress.title} --- {adress.zip}</h3>
      <button onClick={()=>setAdress({...adress,title:"bingol"})}>Adress change</button>
-    </div>
-  );
+        </div>
+    )
 }
 
-export default App;
+export default State

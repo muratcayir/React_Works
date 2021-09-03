@@ -1,14 +1,8 @@
-
-import Api from "./Api";
-//import State from "./State";
-
+import Search from "./components/Search"
 function App() {
-
   return (
     <div className="App">
-
-    <Api/>
-   
+    <Search/>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+@import "../home/home.scss";
+
+.blogs{
+        p{
+                font-size: larger;
+                color: green;
+                @include flex-display(flex, center, space-between);
+        }
+}

@@ -1,0 +1,156 @@
+@import "../../pages/home/home.scss";
+
+
+/*---------------TOP HEADER---------------*/
+
+.top-header{
+    border-bottom: 1px solid $primary-color;
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo{
+
+            h1{
+                font-size: 5rem;
+                font-family: $primary-font;
+                color: $primary-color;
+            }
+        }
+
+        .top-social-menu{
+            display: flex;
+           
+            li{
+                margin: 0 1rem;
+                padding: 1rem;
+
+                a{
+                    font-size: 2rem;
+                    transition: all .5s;
+                    
+                }
+
+                &:hover a{
+                     color:$primary-color;
+
+                }
+            }
+         
+        }
+
+        .login-area{
+            span{
+                display: none;
+            }
+
+        }
+    }
+
+
+}
+/*---------------NAV HEADER---------------*/
+
+.nav-header {
+    .navbar {
+      @include flex-display(flex, center, space-between);
+  
+      .navbar-list {
+        display: flex;
+  
+        li {
+          line-height: 8rem;
+          position: relative;
+          transition: all .5s;
+  
+          .dropdown {
+            position: absolute;
+            background-color: lighten($secondary-color, 10%);
+            width: 150%;
+            left: 50%;
+            z-index: 10;
+            top: 12rem;
+            transition: all .5s;
+            opacity: 0;
+            visibility: hidden;
+  
+            li {
+              line-height: 4rem;
+            }
+          }
+  
+          &:hover {
+            background-color: $primary-color;
+  
+            & .dropdown {
+              opacity: 1;
+              top: 8rem;
+              visibility: visible;
+            }
+          }
+        }
+  
+        a {
+          padding: 0 2rem;
+          font-size: 1.6rem;
+          letter-spacing: 2px;
+        }
+  
+        i {
+          color: $light-color;
+          font-size: 1.6rem;
+          margin-right: 1rem;
+        }
+      }
+  
+      .search-area {
+        input[type="search"], button[type="submit"] {
+          border: none;
+          background-color: transparent;
+          color: $light-color;
+        }
+  
+        input[type="search"] {
+          border-bottom: 1px solid $primary-color;
+          padding: .5rem;
+        }
+  
+        button[type="submit"] {
+          margin-left: -5rem;
+        }
+      }
+  
+  
+    }
+  }
+
+  /*-------------BUTTONS---------------*/
+
+.btn {
+  background-color: $light-color;
+  color: $primary-color;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  letter-spacing: 2px;
+  transition: all .5s;
+
+  &:hover {
+      background-color: $primary-color;
+      color: $light-color;
+  }
+
+  &-primary { 
+      background-color: $primary-color;
+      color: $light-color; 
+
+      &:hover { 
+          background-color: $light-color;
+          color: $primary-color;
+      }
+  }
+
+}

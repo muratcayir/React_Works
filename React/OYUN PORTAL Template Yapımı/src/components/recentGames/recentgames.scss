@@ -1,0 +1,40 @@
+@import "../../pages/home/home.scss";
+
+section{
+padding: 8rem 0;
+}
+
+.recent-games{
+    background-color: aqua;
+
+    &-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-row: 4rem;
+        grid-column-gap:8rem ;
+        grid-template-areas: 'item-1 item-1 item-1 item-2'
+                             'item-3 item-4 item-5 item-6';
+    }
+
+    
+
+    .recent-game-1{
+        grid-area: item-1;
+    }
+    .recent-game-2{
+        grid-area: item-2;
+    }
+    .recent-game-3{
+        grid-area: item-3;
+    }
+    .recent-game-4{
+        grid-area: item-4;
+    }
+    .recent-game-5{
+        grid-area: item-5;
+    }
+    .recent-game-6{
+        grid-area: item-6;
+    }
+}

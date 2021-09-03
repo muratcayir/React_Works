@@ -1,0 +1,78 @@
+/*---------------FONTS---------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+
+/*---------------VARIABLES------------*/
+
+$primary-font: "Changa", sans-serif;
+$secondary-font: "Open Sans", sans-serif;
+$primary-color: #e51515;
+$secondary-color: #14151a;
+$date-color: #ffb320;
+$comment-color: #08abbd;
+$gray-color: #9f9f9f;
+$light-color: #fefefe;
+
+/*---------------GENERAL SETTINGS---------------*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $secondary-font;
+  color: $gray-color;
+  background-color: $light-color;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $primary-font;
+  color: $light-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/*---------------UTILITIES---------------*/
+.bg {
+  &-dark {
+    background-color: $secondary-color;
+  }
+  &-light {
+    background-color: $light-color;
+  }
+}
+
+.ml {
+  &-2 {
+    margin-left: 2rem;
+  }
+}
+/*---------------MIXIN---------------*/
+
+@mixin  flex-display ($display,$align-items,$justify-content){
+    display:$display;
+    align-items:$align-items;
+    justify-content:$justify-content;
+}
