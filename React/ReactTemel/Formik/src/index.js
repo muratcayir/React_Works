@@ -5,8 +5,7 @@ import Signup from "../src/components/Signup"
 
 ReactDOM.render(
   <React.StrictMode>
-     <Signup/>
+    <Signup/>
   </React.StrictMode>,
   document.getElementById('root')
 );
-

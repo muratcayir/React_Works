@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useFormik } from "formik";
 
@@ -10,67 +9,37 @@ export default function App() {
       email: "mrtcayir@hotmail.com",
       gender: "female",
       hobies: [],
-      country: "tr"
+      country: "tr",
     },
     onSubmit: (values) => {
       console.log(values);
-    }
+    },
   });
 
   return (
     <div className="App">
       <div>
-        <h1>Sign Up</h1>
-
         <form onSubmit={handleSubmit}>
           <label htmlFor="firstName">First Name</label>
-          <input
-            name="firstName"
-            value={values.firstName}
-            onChange={handleChange}
-            placeholder="Jane"
-          />
-          <br /> <br />
+          <input name="firstName" value={values.firstName} onChange={handleChange} placeholder="Jane"
+          /><br /> <br />
+
           <label htmlFor="lastName">Last Name</label>
-          <input
-            name="lastName"
-            value={values.lastName}
-            onChange={handleChange}
-            placeholder="Doe"
-          />
-          <br />
-          <br />
+          <input name="lastName"  value={values.lastName} onChange={handleChange}placeholder="Doe"/>
+          <br /> <br />
+
           <label htmlFor="email">Email</label>
-          <input
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-            placeholder="jane@acme.com"
-            type="email"
-          />
-          <br />
-          <br />
-          <br />
+          <input name="email" value={values.email} onChange={handleChange} placeholder="jane@acme.com" type="email"/>
+          <br /><br /><br />
+
           <span>Male</span>
-          <input
-            type="radio"
-            name="gender"
-            value="male"
-            checked={values.gender === "male"}
-            onChange={handleChange}
-          />
+          <input type="radio" name="gender" value="male" checked={values.gender === "male"} onChange={handleChange}/>
+
           <span>Female</span>
-          <input
-            type="radio"
-            name="gender"
-            value="female"
-            checked={values.gender === "female"}
-            onChange={handleChange}
-          />
+          <input type="radio" name="gender" value="female" checked={values.gender === "female"} onChange={handleChange}/>
+          <br/><br /><br />
           <button type="submit">Submit</button>
-          <br />
-          <br />
-          <br />
+          <br /><br /><br />
           <div>
             <input
               type="checkbox"

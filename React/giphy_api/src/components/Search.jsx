@@ -7,45 +7,23 @@ function Search() {
 
     const [search, setSearch] = useState("");
     const [gifs, setGifs] = useState([]);
-    const [isError, setIsError] = useState(false);
-    const [loadingState, setLoadingState] =useState(false);
   
   
-  const renderError = ()=>{// Aranan gifler herhangi bir sebepten dolayı yüklenemez ise hata mesajı veriliyor.
-    if (isError) {
-      return (
-        <div>
-          Unable to get Gifs, please try again in a few minutes
-        </div>
-      );
-    }
-  }
+
   
   const handleSubmit = async e => {
     
     e.preventDefault();
   
-    if(search.length > 0){ //Eğer search boş değilse aşağıda ki işlemler yapılıyor
-     
-      setIsError(false);//Hata olmadığı için false değeri atanıyor
-     
-      setLoadingState(true);//Gifler yüklenirken beklenilmesi gerekildiğine dair loading bilgisi gösteriliyor
-
-      await  fetch(GIPHY_API+search)//fetch kullanılarak kaynaktan veriler alınıyor
+    await  fetch(GIPHY_API+search)//fetch kullanılarak kaynaktan veriler alınıyor
       
-     .then((res)=>{
-        setLoadingState(false);
-        return res.json();})//Veriler Json veri tipine çevriliyor
+    .then((res)=>{return res.json();})//Veriler Json veri tipine çevriliyor
       
-      .then((result)=>{
-        setGifs(result.data.map((gif)=>{return gif.images.fixed_height.url;}))})//Gifler map fonksiyonu yardımı ile alınıyor
+    .then((result)=>{ setGifs(result.data.map((gif)=>{return gif.images.fixed_height.url;}))})//Gifler map fonksiyonu yardımı ile alınıyor
       
-      .catch(()=>{
-        setLoadingState(false);
-        setIsError(true);//Hata olduğu için true değeri atanıyor
-        setTimeout(() => setIsError(false), 4000);})//Hata mesajı 4 sn boyunca gösteriliyor
+    .catch((err)=>console.log(err))
       
-      }};
+      };
   
   
   
@@ -71,18 +49,11 @@ function Search() {
       
     </div>
     <div>
-      {renderError()}{/* Hata olması halinde hata mesajı veriliyor */}
+      
       </div>
     <div className="result">
-          {
-            (loadingState) ? (//Loading bilgisi ekranda gösteriliyor
-              <div className="loading">
-                    <div className="loader">   
-                    </div>
-              </div>
-            ) : (
               <div className="list">
-                {
+              {
                   gifs.map((gif)=>{
                     return (//Gifler listeleniyor
                       <div className="item">
@@ -92,8 +63,7 @@ function Search() {
                   })
                 }
               </div>
-            )
-          }
+            
         </div>
     </div>
       )
