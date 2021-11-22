@@ -1,0 +1,45 @@
+.chatlist {
+    border: solid 1px #ddd;
+    padding: 10px;
+    height: 400px;
+    width: 500px;
+    margin: 40px auto 0 auto;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    overflow: hidden;
+  }
+  
+  .chatlist > div {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    overflow: auto;
+  }
+  
+  .textInput {
+    border: none;
+    padding: 10px;
+    margin: 4px;
+    width: 500px;
+    font-size: 16px;
+  }
+  
+  .chatItem {
+    font-size: 18px;
+    color: #333;
+    border-radius: 8px;
+    background: #fff;
+    padding: 12px 18px;
+    border: 0.5px solid rgba(0, 0, 0, 0.02);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
+    max-width: 70%;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 6px;
+    margin-right: auto;
+  }
+  
+  .chatItem.right {
+    margin-right: 0;
+    margin-left: auto;
+  }
